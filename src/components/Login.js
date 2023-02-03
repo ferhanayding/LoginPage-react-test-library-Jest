@@ -12,13 +12,13 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [showUser, setShowUser] = useState(false);
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     setShowUser(false);
     e.preventDefault();
     if (validateEmail(email)) {
       setShowUser(true);
       setError("");
+
       return;
     }
     setError("Email is not valid");
